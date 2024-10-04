@@ -12,19 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
 
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public AdminController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping()
     public String showAllUsers(Model model) {
-        model.addAttribute("users", userService.showAllUsers());
+        model.addAttribute("admin", userService.showAllUsers());
         return "showAllUsers";
     }
 
@@ -48,7 +48,7 @@ public class UserController {
             return "newUser";
         }
         userService.saveUser(user, role);
-        return "redirect:/users";
+        return "redirect:/admin";
     }
 
     @GetMapping("/{id}/edit")
@@ -68,13 +68,13 @@ public class UserController {
         }
         String id = request.getRequestURI().split("/")[2];
         userService.updateUser(Long.parseLong(id), user, role);
-        return "redirect:/users";
+        return "redirect:/admin";
     }
 
     @PostMapping(value = "/{id}", params = "action=del")
     public String deleteUser(HttpServletRequest request) {
         String id = request.getRequestURI().split("/")[2];
         userService.deleteUser(Long.parseLong(id));
-        return "redirect:/users";
+        return "redirect:/admin";
     }
 }

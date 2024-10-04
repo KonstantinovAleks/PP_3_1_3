@@ -36,12 +36,12 @@
     </tr>
     </thead>
 
-    <tr th:each="user : ${users}">
+    <tr th:each="user : ${admin}">
         <td>
             <a th:text="${user.getId()}">user</a>
         </td>
         <td>
-            <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
+            <a th:href="@{/admin/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
         </td>
         <td>
             <a th:text="${user.getSurName()}">user</a>
@@ -62,7 +62,7 @@
 <hr/>
 
 <h2>
-    <a href="/users/new">Create a new user</a>
+    <a href="/admin/new">Create a new user</a>
 </h2>
 
 <br/>

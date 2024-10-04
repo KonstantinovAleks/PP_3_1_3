@@ -40,11 +40,11 @@
 <hr/>
 
 <h2>
-    <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+    <a th:href="@{/admin/{id}/edit(id=${user.getId()})}">Edit</a>
 </h2>
 
 <br/>
-<form th:method="POST" th:action="@{/users/{id}?action=del(id=${user.getId()})}">
+<form th:method="POST" th:action="@{/admin/{id}?action=del(id=${user.getId()})}">
 <!--    <input type="hidden" name="_method" value="DELETE"/>-->
     <input type="submit" value="Delete!"/>
 </form>
@@ -53,7 +53,7 @@
 <hr/>
 
 <h6>
-    <button onclick="window.location.href='/users'">go back to the list of users</button>
+    <button onclick="window.location.href='/admin'">go back to the list of users</button>
 </h6>
 
 <br/>

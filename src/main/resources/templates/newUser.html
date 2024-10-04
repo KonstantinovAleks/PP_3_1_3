@@ -32,7 +32,7 @@
 <hr/>
 <br/>
 
-<form th:method="POST" th:action="@{/users/create}" th:object="${user}">
+<form th:method="POST" th:action="@{/admin/create}" th:object="${user}">
     <label for="name">Enter your name: </label>
     <input type="text" th:field="*{name}" id="name"/>
     <div style="color: orange" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
@@ -69,7 +69,7 @@
 <hr/>
 
 <h6>
-    <button onclick="window.location.href='/users'">go back to the list of users</button>
+    <button onclick="window.location.href='/admin'">go back to the list of users</button>
 </h6>
 
 <br/>
