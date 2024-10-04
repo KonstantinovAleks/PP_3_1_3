@@ -40,7 +40,7 @@ public class UserController {
         return "newUser";
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public String createUser(@ModelAttribute("user") @Valid User user,
                              BindingResult bindingResult,
                              @RequestParam("role") String role) {
